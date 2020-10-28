@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login sistema</title>
+</head>
+<body>
+    <form method="post" action="/">
+        {% csrf_token %}
+        <table>
+          <tr>
+           <td><label>Login</label></td> 
+           <td><input name="usuario" type="text" id="usuario" value="{{usuario}}"/></td>
+          </tr>
+          <tr>
+            <td><label>Senha</label></td> 
+            <td><input name="senha" type="password" id="senha" value="{{senha}}"> </input></td>
+          </tr>
+        </table>
+        <input type="submit" value="login" />
+      </form>
+</body>
+</html>
