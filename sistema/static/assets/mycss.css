@@ -1,0 +1,13 @@
+div.dataTables_filter {
+    text-align: right;
+    padding-left: 230px;
+}
+
+div.dataTables_wrapper{
+    color:white;
+    font-size: 15px;
+}
+
+.btn-icone {
+    border-radius: 20px;
+}

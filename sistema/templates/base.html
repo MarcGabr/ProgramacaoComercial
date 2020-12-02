@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="ThemeDesign" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        {% block css %}
+
+        {% endblock css%}
+        <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'assets/css/icons.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'assets/mycss.css' %}" rel="stylesheet" type="text/css">
+
+    </head>
+
+
+    <body class="fixed-left" style="background-color: white;">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+                <!-- LOGO -->
+                <div class="topbar-left" style="background-color: #35556a;">
+                    <div class="text-center">
+                    </div>
+                </div>
+                <!-- Button mobile view to collapse sidebar menu -->
+                <div class="navbar navbar-default" role="navigation" style="background-color: #35556a;">
+                    <div class="container">
+                        <div class="">
+                            <div class="pull-left">
+                                <button type="button" class="button-menu-mobile open-left waves-effect waves-light">
+                                    <i class="ion-navicon"></i>
+                                </button>
+                                <span class="clearfix"></span>
+                            </div>
+                            <form class="navbar-form pull-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search-bar" placeholder="Search...">
+                                </div>
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </form>
+
+                            <ul class="nav navbar-nav navbar-right pull-right">
+                                <li>
+                                    <a style="margin-top: 20%;">
+                                        <span>Seja Bem Vindo, </span>
+                                    </a>
+                                </li>
+                                <li class="hidden-xs">
+                                    <a href="#" id="btn-fullscreen" class="waves-effect waves-light notification-icon-box"><i class="mdi mdi-fullscreen"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                        <img src="https://gartic.com.br/imgs/mural/ta/tatahbarbosa/carro.png" alt="user-img" class="img-circle">
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0)"> Perfil</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="javascript:void(0)"> Logout <i style="padding-left: 20px; color: red; font-size: 20px;" class="mdi mdi-power"></i></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li class="menu-title"></li>
+                            <li>
+                                <a id="Indice" href="{% url 'listar-veiculos' %}" class="waves-effect"><i class="mdi mdi-home"></i><span> Painel Inicial</span></a>
+                            </li>
+                            <li class="has_sub">
+                                <a id="Medic" href="" class="waves-effect"><i class="mdi mdi-car"></i> <span> Veiculos </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{% url 'listar-veiculos' %}">Listar</a></li>
+                                    <li><a class="" href="/veiculos/novo/">Cadastrar</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div> <!-- end sidebarinner -->
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- Start right Content here -->
+
+            <div class="content-page">
+                {% block  main %}
+
+                {% endblock main  %}
+            </div>
+            <!-- End Right content here -->
+            <footer class="footer">
+                © Alterado por Marcos Gabriel produzido por Appzia - All Rights Reserved.
+           </footer>
+        </div>
+        <!-- END wrapper -->
+
+
+        <!-- jQuery  -->
+
+
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/modernizr.min.js' %}"></script>
+        <script src="{% static 'assets/js/detect.js' %}"></script>
+        <script src="{% static 'assets/js/fastclick.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.slimscroll.js' %}"></script>
+        <script src="{% static 'assets/js/jquery.blockUI.js' %}"></script>
+        <script src="{% static 'assets/pages/dashborad.js' %}"></script>
+        <script src="{% static 'assets/js/app.js' %}"></script>
+
+        {% block javascript %}
+
+        {% endblock javascript%}
+        
+    </body>
+</html>
