@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^excluir/(?P<pk>[0-9]+)/$', views.VeiculosDelete.as_view(), name='deletar-veiculo'),
     path('<int:pk>/', views.VeiculosEdit.as_view(), name='editar-veiculo'),
     path('index', home, name='index'),
+    path('api/listar/', views.VeiculosListAPI.as_view(), name='api-listar-veiculo'),
 
 ]

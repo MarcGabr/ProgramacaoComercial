@@ -5,14 +5,13 @@ from veiculos.models import Veiculo
 from veiculos.forms import FormularioVeiculo
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from sistema.utilitarios import AutenticacaoObrigatoria
 
 def home(request):
     return render(request, 'veiculos/index.html')
 
 @method_decorator(login_required, name='dispatch')
-#@login_required
 class VeiculosList(ListView):
-    print('Marcos')
     model = Veiculo
     context_object_name = 'lista_veiculos'
     template_name = 'veiculos/listar.html'
@@ -41,3 +40,12 @@ class VeiculosDelete(DeleteView):
     model = Veiculo
     template_name = 'veiculos/deletar.html'
     success_url = reverse_lazy('listar-veiculos')
+
+from veiculos.serializers import SerializadorVeiculo
+from rest_framework.generics import ListAPIView
+
+class VeiculosListAPI(ListAPIView):
+    serializer_class = SerializadorVeiculo
+
+    def get_queryset(self):
+        return Veiculo.objects.all()
