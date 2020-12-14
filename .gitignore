@@ -1,6 +1,4 @@
 venv
 *venv
 *.venv
-prontosocorro/db.sqlite3
-*prontosocorro/db.sqlite3
-*.prontosocorro/db.sqlite3
+*.sqlite3
